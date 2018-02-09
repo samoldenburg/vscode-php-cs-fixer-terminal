@@ -1,0 +1,48 @@
+{
+    "name": "vscode-terminal-php-cs-fixer",
+    "displayName": "vscode-terminal-php-cs-fixer",
+    "description": "Run php cs fixer in a real terminal.",
+    "version": "0.0.1",
+    "publisher": "soldenburg",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "workspaceContains:**/*.php"
+    ],
+    "main": "./src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "php-cs-fixer-terminal.php-cs-fixer",
+                "title": "php-cs-fixer"
+            },
+            {
+                "command": "php-cs-fixer-terminal.php-cs-fixer-file",
+                "title": "php-cs-fixer format document"
+            },
+            {
+                "command": "php-cs-fixer-terminal.php-cs-fixer-project",
+                "title": "php-cs-fixer format project"
+            },
+            {
+                "command": "php-cs-fixer-terminal.php-cs-fixer-project-dry",
+                "title": "php-cs-fixer format project, dry run"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
